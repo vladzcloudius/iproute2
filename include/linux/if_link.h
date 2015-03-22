@@ -457,6 +457,9 @@ enum {
 	IFLA_VF_SPOOFCHK,	/* Spoof Checking on/off switch */
 	IFLA_VF_LINK_STATE,	/* link state enable/disable/auto switch */
 	IFLA_VF_RATE,		/* Min and Max TX Bandwidth Allocation */
+	IFLA_VF_RSS_QUERY_EN,	/* RSS Redirection Table and Hash Key query
+				 * on/off switch
+				 */
 	__IFLA_VF_MAX,
 };
 
@@ -485,6 +488,11 @@ struct ifla_vf_rate {
 };
 
 struct ifla_vf_spoofchk {
+	__u32 vf;
+	__u32 setting;
+};
+
+struct ifla_vf_rss_query_en {
 	__u32 vf;
 	__u32 setting;
 };
